@@ -1,5 +1,3 @@
-# David Lattimore
-
 Some Rust projects that I work on:
 
 * [Evcxr](https://github.com/evcxr/evcxr) - a REPL and Jupyter kernel for Rust.
