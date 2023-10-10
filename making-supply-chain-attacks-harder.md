@@ -1,6 +1,6 @@
 # Making Rust supply chain attacks harder with Cackle
 
-If you want a slightly shorter read, skip to "Introducing Cackle".
+If you want a slightly shorter read, skip to [Introducing Cackle](#introducing-cackle-aka-cargo-acl).
 
 ## A hypothetical story about Alex
 
