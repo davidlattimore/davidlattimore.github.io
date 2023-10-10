@@ -1,4 +1,7 @@
 # Making Rust supply chain attacks harder with Cackle
+
+If you want a slightly shorter read, skip to "Introducing Cackle".
+
 ## A hypothetical story about Alex
 
 Alex is a software engineer who has built a tool which she licences to her customers. She only has a
