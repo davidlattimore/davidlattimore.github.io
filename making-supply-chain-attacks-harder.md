@@ -62,8 +62,8 @@ There are numerous things you can do to help prevent supply-chain attacks:
   community - although everyone is new at some point, so this is a trade-off.
 * Copy the `cargo add` command from crates.io rather than typing the name by hand. This can help
   prevent you from being the victim of typosquatting attacks.
-* For crates where you don't need or want new features, bug fixes etc, you could consider pinning
-  their versions. If you do though, then you should monitor for security advisories.
+* For binary crates where you don't need or want new features, bug fixes etc, you could consider
+  pinning their versions. If you do though, then you should monitor for security advisories.
 
 For crate authors there are some additional steps you can take:
 
@@ -319,8 +319,9 @@ tokio, Cackle will suggest that you add `tokio::net` to the `net` API.
 Once you've granted a package permission to use an API, it has carte blanche to do whatever it likes
 with that permission. Cackle provides strongest protection where crates have been granted no special
 permissions. Similarly, once a crate is granted use of unsafe, it could in theory do just about
-anything with it. That said, using unsafe to say perform network access is harder than just using
-Rust's `std::net` APIs, so we're at least making it harder for a would-be attacker.
+anything with it. That said, using unsafe to say perform network access without linking to C code,
+is harder than just using Rust's `std::net` APIs, so we're at least making it harder for a would-be
+attacker.
 
 More problematic is that platform-specific or config-specific malicious code might be missed. For
 example, malicious code that is only present on Windows or Mac would be missed since Cackle
