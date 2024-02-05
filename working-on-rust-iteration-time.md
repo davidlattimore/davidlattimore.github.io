@@ -82,6 +82,12 @@ times (77 seconds down from 107). If developing on Mac, probably just set `debug
 on Windows, it's probably a good idea to try both and measure the warm build time to see what
 combination has the best effect.
 
+One downside of no debug info is that your backtraces will only have function names, with no line
+numbers. Personally, I don't mind this and despite having `debug=0` in my profile for a long time,
+didn't even notice until matthieum (on Reddit) pointed it out. Note that you'll still get the line
+number where the panic occurred, just not line numbers for the functions that called it. I find this
+to be an acceptable trade-off for faster warm builds.
+
 If you do need debug info, setting `split-debuginfo="unpacked"` isn't quite as fast as no debug
 info, but it's a lot faster than actually linking the debug info. Thanks VorpalWay on Reddit for
 suggesting this option. Note however that this is already the default on Mac and it isn't supported
@@ -90,7 +96,7 @@ it's a good idea to measure the effect of your settings change on your warm buil
 
 You might be wondering about the effect of setting `strip="symbols"` which strips not just debug
 information, but also symbol tables. This can potentially speed up warm builds a little more, but
-has the significant downside that you won't be able to get backtraces when you set
+has the significant downside that you won't be able to get backtraces at all when you set
 `RUST_BACKTRACE=1`, so I wouldn't recommend it for development builds.
 
 ## Building a non-relocatable executable
@@ -241,11 +247,10 @@ projects are slower to build than what's actually necessary.
 
 There has been talk about bundling lld with rust and using it by default. That would go a long way.
 
-I also wonder what might be done about the debug information. The current default is intended to
-make debugging easier, which is great, except that I get the impression the vast majority of
-developers just do println-based debugging most of the time. I wonder if perhaps the default dev
-build shouldn't include debug info and users should need to build with a `--debug` flag in order to
-get it.
+I also wonder what might be done about the debug information. In an earlier version of this article,
+I suggested that maybe the default should be no debug info, however given that this makes backtraces
+not have line numbers, I'm now not so sure. Probably the `split-debuginfo="unpacked"` should become
+the default on Linux like it is on Mac.
 
 ### Incremental linking
 
