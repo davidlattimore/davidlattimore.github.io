@@ -87,24 +87,6 @@ information, but also symbol tables. This can potentially speed up warm builds a
 has the significant downside that you won't be able to get backtraces when you set
 `RUST_BACKTRACE=1`, so I wouldn't recommend it for development builds.
 
-## Statically linking with musl libc
-
-Next we'll switch from using glibc to musl libc.
-
-```toml
-[build]
-target = "x86_64-unknown-linux-musl"
-
-[target.x86_64-unknown-linux-musl]
-linker = "/usr/bin/clang-15"
-rustflags = [ "-C", "link-arg=--ld-path=mold" ]
-```
-
-Now we're at 1.608 s ±  0.188 s.
-
-This made negligible difference and could well just be measurement variation, but for static
-linking, I usually prefer musl over glibc, so we'll keep that change.
-
 ## Building a non-relocatable executable
 
 Rust by default compiles relocatable executables. This means that each time the binary gets run, the
