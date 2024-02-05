@@ -82,6 +82,12 @@ times (77 seconds down from 107). If developing on Mac, probably just set `debug
 on Windows, it's probably a good idea to try both and measure the warm build time to see what
 combination has the best effect.
 
+If you do need debug info, setting `split-debuginfo="unpacked"` isn't quite as fast as no debug
+info, but it's a lot faster than actually linking the debug info. Thanks VorpalWay on Reddit for
+suggesting this option. Note however that this is already the default on Mac and it isn't supported
+on Windows, so you'll probably only see a difference when you set this on Linux. Whatever you do,
+it's a good idea to measure the effect of your settings change on your warm build times.
+
 You might be wondering about the effect of setting `strip="symbols"` which strips not just debug
 information, but also symbol tables. This can potentially speed up warm builds a little more, but
 has the significant downside that you won't be able to get backtraces when you set
@@ -169,13 +175,13 @@ Dirty regex-automata v0.4.5: the config settings changed
 It's possible that you'll see crates being recompiled and Cargo doesn't give you a reason. One
 common reason in this case is that the features for that crate have changed. This typically happens
 when you're using a cargo workspace. Different crates in your workspace might request different
-features from your dependencies. When building the whole workspace `cargo build`, the union of those
-features is used, however if you then request to just build a single crate, e.g. `cargo build -p
-foo`, only the features needed by the `foo` crate will be built, which means the dependency needs to
-be rebuilt. One way that some people solve this is to create a `workspace-hack` package that depends
-on all your dependencies with the union of all their features then have all your packages depend on
-`workspace-hack`. [cargo-hakari](https://crates.io/crates/cargo-hakari) is a tool to help automate
-this. Other options are to just not use workspaces or never use the `-p` flag.
+features from your dependencies. When building the whole workspace with `cargo build`, the union of
+those features is used, however if you then request to just build a single crate, e.g. `cargo build
+-p foo`, only the features needed by the `foo` crate will be built, which means the dependency needs
+to be rebuilt. One way that some people solve this is to create a `workspace-hack` package that
+depends on all your dependencies with the union of all their features then have all your packages
+depend on `workspace-hack`. [cargo-hakari](https://crates.io/crates/cargo-hakari) is a tool to help
+automate this. Other options are to just not use workspaces or never use the `-p` flag.
 
 ## Investigating remaining time
 
