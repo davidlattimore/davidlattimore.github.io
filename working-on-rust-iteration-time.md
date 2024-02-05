@@ -102,7 +102,7 @@ musl and to static linking didn't have any significant effect on the benchmark t
 You can install the musl toolchain with:
 
 ```sh
-x86_64-unknown-linux-musl
+rustup target add x86_64-unknown-linux-musl
 ```
 
 Then add the following to your `.cargo/config.toml`.
