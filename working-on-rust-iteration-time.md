@@ -211,7 +211,8 @@ resulting `strace.out`, we can note a few things:
   binary is 37 ms. [Rustup issue](https://github.com/rust-lang/rustup/issues/2626) for improving
   this.
 * The time from executing `cargo` to executing `rustc` is 230 ms. I wonder if there's scope for
-  caching whatever expensive computations cargo is doing here.
+  caching whatever expensive computations cargo is doing here. Update: epage has been [looking into
+  this](https://github.com/rust-lang/cargo/pull/13399).
 * The time from when `rustc` starts until it finishes is 1100 ms. Not surprisingly this is where we
   spend the majority of our time.
 * There's 19 ms between when `rustc` exits and when `cargo` executes our binary. Looks like this is
