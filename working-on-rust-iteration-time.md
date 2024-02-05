@@ -146,6 +146,9 @@ that:
 hyperfine --warmup 2 --prepare 'touch src/main.rs' 'cargo build'
 ```
 
+If you don't have hyperfine, see the [hyperfine](https://github.com/sharkdp/hyperfine) repository
+for installation instructions.
+
 ## Diagnosing unexpected rebuilds of dependencies
 
 If you're frequently seeing cargo rebuild your dependencies when you've only changed your crate, it
