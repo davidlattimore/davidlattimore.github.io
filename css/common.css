@@ -1,0 +1,140 @@
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 1.2rem;
+    font-size: 1.3em;
+}
+
+p {
+    line-height: 1.3;
+}
+
+a {
+    color: #00e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container main {
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    overflow-x: auto;
+}
+
+.social-links img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.social-links a:hover {
+    text-decoration: none;
+}
+
+@media (min-width: 28em) {
+    nav ul li {
+        margin-bottom: 0;
+    }
+}
+
+nav ul {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav ul li {
+    margin-bottom: 0.75rem;
+}
+
+nav ul li:not(:last-of-type) {
+    margin-right: 1rem;
+}
+
+@media (min-width: 37.5em) {
+    header {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 60em) {
+    .container {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .container main {
+        flex-grow: 1;
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 65em) {
+
+    body,
+    body.single-post {
+        margin: 0 auto;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    body {
+        width: 90%;
+    }
+
+    body.single-post {
+        width: 44rem;
+    }
+}
+
+@media (min-width: 88em) {
+    body {
+        width: 60rem;
+    }
+}
+
+.posts {
+    border-left: 1px dashed #aaa;
+    list-style: none;
+    padding-left: 1.15rem;
+}
+
+.post {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.post-meta {
+    font-size: 0.70rem;
+}
+
+.post a {
+    font-size: 1.5rem;
+}
+
+.post::after {
+    border: 1px solid #bdbbbb;
+    border-radius: 50%;
+    background-color: white;
+    content: '';
+    height: 0.5rem;
+    left: -1.5rem;
+    position: absolute;
+    top: 10px;
+    width: 0.5rem;
+}

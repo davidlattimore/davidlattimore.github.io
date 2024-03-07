@@ -1,4 +1,10 @@
-title: David Lattimore's open-source projects
-remote_theme: pages-themes/hacker@v0.2.0
+title: David Lattimore's Blog
+email: dvdlttmr@gmail.com
+description: >- # ignore newlines until "baseurl:"
+  A blog about my open-source work, mostly in Rust. My interests are mostly around developer
+  tooling, compilers, linking.
+github_username:  davidlattimore
+
 plugins:
-- jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-redirect-from

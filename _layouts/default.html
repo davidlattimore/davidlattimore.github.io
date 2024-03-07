@@ -1,0 +1,18 @@
+{% include html_header.html %}
+
+<body>
+  {% include page_header.html %}
+  {% include nav.html %}
+
+  <main>
+    <article>
+      {% include meta.html %}
+      {{ content }}
+    </article>
+  </main>
+
+  {% include page_footer.html %}
+
+</body>
+
+</html>
