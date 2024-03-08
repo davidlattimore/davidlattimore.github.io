@@ -1,7 +1,7 @@
 ---
 layout: default
 title:  "Speeding up the Rust edit-build-run cycle"
-date:   2023-10-10 00:00:00 +1100
+date:   2024-02-05 00:00:00 +1100
 categories: posts
 redirect_from:
   - /working-on-rust-iteration-time.html
