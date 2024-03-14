@@ -3,6 +3,14 @@ body {
     margin: 0;
     padding: 1.2rem;
     font-size: 1.3em;
+    background-color: #1a1a1a;
+    color: #eaeaea;
+}
+
+h1,
+h2,
+h3 {
+    color: #45c843;
 }
 
 p {
@@ -10,7 +18,7 @@ p {
 }
 
 a {
-    color: #00e;
+    color: #63c0f5;
     text-decoration: none;
 }
 
@@ -137,4 +145,24 @@ nav ul li:not(:last-of-type) {
     position: absolute;
     top: 10px;
     width: 0.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+td,
+th {
+    padding: 8px 8px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
 }
