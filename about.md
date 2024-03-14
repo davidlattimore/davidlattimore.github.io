@@ -1,7 +1,10 @@
 ---
 layout: default
+title: David Lattimore
 permalink: /about/
 ---
+
+![Photo of David Lattimore](/images/about/profile-photo.jpeg)
 
 I'm a software developer in Sydney, Australia. I'm currently taking a break from paid employment to
 work on various open-source Rust projects.

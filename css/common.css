@@ -38,6 +38,16 @@ pre.highlight {
     padding: 0 1rem;
 }
 
+.language-plaintext {
+    font-family: monospace;
+    background-color: #333;
+}
+
+.language-sh pre:before {
+    content: "\00BB";
+    margin-right: 0.5rem;
+}
+
 .social-links {
     border-top: 1px dotted #45c843;
     padding-top: 1rem;
@@ -163,15 +173,19 @@ table {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+th {
+    color: #45c843;
+}
+
 td,
 th {
     padding: 8px 8px;
 }
 
 tbody tr {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #444;
 }
 
 tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #222;
 }
