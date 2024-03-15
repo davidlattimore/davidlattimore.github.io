@@ -34,6 +34,15 @@ a:hover {
     overflow-x: auto;
 }
 
+pre.highlight {
+    padding: 0 1rem;
+}
+
+.social-links {
+    border-top: 1px dotted #45c843;
+    padding-top: 1rem;
+}
+
 .social-links img {
     width: 1.5em;
     height: 1.5em;
