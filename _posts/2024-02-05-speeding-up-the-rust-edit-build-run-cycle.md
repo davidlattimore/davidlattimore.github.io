@@ -292,3 +292,7 @@ an incremental linker. I'll be living off savings, the goodwill of my partner an
 How long I can do that for will depend on how much sponsorship I can get. So if you think your
 company might benefit from that, perhaps you can convince them to sponsor me? Huge thanks to my
 existing sponsors, especially Embark studios.
+
+## Discussion threads
+
+[Reddit](https://www.reddit.com/r/rust/comments/1ajdm1v/speeding_up_rust_editbuildrun_cycle/)

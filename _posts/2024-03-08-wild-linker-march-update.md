@@ -263,3 +263,7 @@ I'm currently doing the live-off-savings-and-github-sponsors thing. Whether I ca
 this long-term will depend on how much sponsorship I can attract. If you or your company appreciate
 this work and would like to see it continue, please consider [sponsoring
 me](https://github.com/sponsors/davidlattimore).
+
+## Discussion threads
+
+[Reddit](https://www.reddit.com/r/rust/comments/1bi60q6/wild_linker_march_update/)

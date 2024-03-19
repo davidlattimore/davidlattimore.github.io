@@ -394,3 +394,7 @@ dependencies without you noticing.
 Huge thank you to [Embark Studios](https://github.com/embark-studios) and [Johan
 Andersson](https://github.com/repi) for their generous
 [sponsorship](https://github.com/sponsors/davidlattimore).
+
+# Discussion threads
+
+[Reddit](https://www.reddit.com/r/rust/comments/1744s5v/making_rust_supply_chain_attacks_harder_with/)
