@@ -15,4 +15,3 @@ title: David Lattimore
     </li>
   {% endfor %}
 </ul>
-<a rel="me" href="https://mas.to/@davidlattimore">Mastodon</a>
