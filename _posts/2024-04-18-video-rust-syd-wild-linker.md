@@ -12,3 +12,6 @@ This week I presented a talk at the Rust Sydney meetup about the Wild linker.
 There are also [slides, including speaker
 notes](https://docs.google.com/presentation/d/149uYKGbT0Jn4N6tBqdGTc6DEAX1olmj3m7H7qdMJJdU/edit?usp=sharing)
 with roughly what I said, or intended to say.
+
+[Discussion on
+Reddit](https://www.reddit.com/r/rust/comments/1c7izhz/video_a_linker_in_the_wild_rust_linker/)
