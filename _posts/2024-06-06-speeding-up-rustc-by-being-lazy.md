@@ -4,7 +4,7 @@ title:  "Speeding up rustc by being lazy"
 date:   2024-06-06 00:00:00 +1100
 categories: posts
 ---
-I’ve been busy working on the Wild linker (see previous posts), but wanted to divert for a moment to
+I’ve been busy working on the Wild linker (see [previous posts](/)), but wanted to divert for a moment to
 look at some other compilation speed things that I’ve been thinking about. This post discusses
 various thoughts about moving Rust codegen, monomorphisation and inlining later in compilation and
 some of the ways this might reduce both from-scratch and incremental build times.
