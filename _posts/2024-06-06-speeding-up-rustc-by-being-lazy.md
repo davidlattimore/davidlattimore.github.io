@@ -300,3 +300,7 @@ getting a "real job".
 * lexara-prime-ai
 * ethanmsl
 * +1 anonymous
+
+# Discussion threads
+
+* [Reddit](https://www.reddit.com/r/rust/comments/1d9b36j/speeding_up_rustc_by_being_lazy/)
