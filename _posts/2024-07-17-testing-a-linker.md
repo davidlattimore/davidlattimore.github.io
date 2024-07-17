@@ -300,3 +300,7 @@ to make it possible for me to continue to work on this kind of stuff rather than
 * Pratyush
 * ethanmsl
 * +2 anonymous
+
+# Discussion threads
+
+* [Reddit](https://www.reddit.com/r/rust/comments/1e54pml/testing_the_wild_linker/)
