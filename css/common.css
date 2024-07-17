@@ -34,6 +34,10 @@ a:hover {
     overflow-x: auto;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
 pre.highlight {
     padding: 0 1rem;
 }
