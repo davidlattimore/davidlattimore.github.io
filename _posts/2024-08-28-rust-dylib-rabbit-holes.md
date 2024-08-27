@@ -455,4 +455,4 @@ to make it possible for me to continue to work on this kind of stuff rather than
 
 # Discussion threads
 
-TODO
+* [Reddit](https://www.reddit.com/r/rust/comments/1f2s7ot/rust_dylib_rabbit_holes/)
