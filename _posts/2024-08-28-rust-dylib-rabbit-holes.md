@@ -352,11 +352,11 @@ An alternative to annotating the source to indicate whether a symbol will come f
 or be linked statically is to give the compiler access to the things we're going to link against so
 that it can find where the definition comes from and make an appropriate decision. This would never
 fly in the C world where it's expected that you can compile code with only access to the header
-file, but in most modern languages like Rust, it's exactly what happens. When you compile a Rust
-crate, the compiler is given access to its dependencies and so it knows whether those dependencies
-are dylibs (shared objects) or rlibs (statically linked). This means that it's possible for the Rust
-compiler to always make the optimal choice between a direct or an indirect reference because it has
-all the information it needs to make that decision.
+file, but in most modern languages like Rust, it's more of an option for the compiler to have access
+to your dependencies in order to make this kind of decision. Rust doesn't currently do this, but it
+should be possible for Rust to always make the optimal choice between a direct or an indirect
+reference because it has all the information it needs to make that decision. Thanks to Reddit user
+u/Zoxc32 for the correction that Rust doesn't currently do this.
 
 Using default visibility for symbols in shared objects affects not only load time for those shared
 objects (150ms vs 5ms), but it also likely affects runtime performance, since all those variables
