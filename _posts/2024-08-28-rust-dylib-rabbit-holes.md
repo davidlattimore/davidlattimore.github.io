@@ -142,7 +142,7 @@ restricted by setting their visibility, which affects how they'll be treated whe
 The key difference here is between default visibility and protected visibility. The latter means
 that the symbol cannot be interposed (overridden). A default visibility symbol however can be
 interposed, which means that if another shared object earlier in the load order, or the executable
-itself defines a symbol with the same name, that will take precidence.
+itself defines a symbol with the same name, that will take precedence.
 
 OK, so we just need to set all our symbols to protected. That way they'll be exported from the
 shared object, but won't be permitted to be overridden.
