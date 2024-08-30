@@ -4,12 +4,6 @@ title:  "Rust dylib rabbit holes"
 date:   2024-08-28 00:00:00 +1000
 categories: posts
 ---
-**I'll be giving a talk about this at the Rust Sydney meetup later today. It'll be about 9am UTC,
-although it could be early or late depending on other talks. The livestream link will be posted to
-Discord at https://discord.gg/pW35BNSBeV (see syd-2024-aug-28 channel) where you can also ask
-questions. I hope that the talk will also be posted to YouTube later, although it's not me that does
-that, so I can't make any promises.**
-
 Bevy is a popular game engine for Rust. It's pretty large and compilation times can be an issue. To
 help with this, Bevy provides an optional feature that when enabled, compiles most of Bevy as a
 dynamic library. This allows for faster iteration as you don't need to relink all the Bevy internals
@@ -456,3 +450,4 @@ to make it possible for me to continue to work on this kind of stuff rather than
 # Discussion threads
 
 * [Reddit](https://www.reddit.com/r/rust/comments/1f2s7ot/rust_dylib_rabbit_holes/)
+* [Hacker News](https://news.ycombinator.com/item?id=41375491)
