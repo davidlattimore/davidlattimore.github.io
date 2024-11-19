@@ -8,9 +8,12 @@ body {
 }
 
 h1,
-h2,
-h3 {
+h2 {
     color: #45c843;
+}
+
+h2 {
+    font-size: 1.1em;
 }
 
 p {
