@@ -359,6 +359,46 @@ Hopefully most, or at least some of that made sense. If you have any thoughts or
 do reach out. My contact details can be found on my [about page](/about) or you can comment on the
 Reddit thread that I'll link below.
 
+# Thanks
+
+Thanks to my [github sponsors](https://github.com/sponsors/davidlattimore). Your contributions help
+to make it possible for me to continue to work on this kind of stuff rather than going and getting a
+"real job".
+
+* bearcove
+* repi
+* marxin
+* bes
+* Urgau
+* jonhoo
+* Kobzol
+* pmarks
+* coastalwhite
+* mstange
+* twilco
+* binarybana
+* willstott101
+* bcmyers
+* Shnatsel
+* Rafferty97
+* joshtriplett
+* teburd
+* wezm
+* davidcornu
+* tommythorn
+* flba-eb
+* acshi
+* gendx
+* teh
+* nazar-pc
+* yerke
+* drmason13
+* NobodyXu
+* jplatte
+* ymgyt
+* Pratyush
+* +2 anonymous
+
 # Discussion threads
 
 * Reddit: TODO
