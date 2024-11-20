@@ -401,4 +401,4 @@ to make it possible for me to continue to work on this kind of stuff rather than
 
 # Discussion threads
 
-* Reddit: TODO
+* [Reddit](https://www.reddit.com/r/rust/comments/1gvdref/designing_wilds_incremental_linking/)
