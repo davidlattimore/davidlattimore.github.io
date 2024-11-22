@@ -21,7 +21,7 @@ dependencies such that warm compilation times are a problem.
 ## Benchmark setup
 
 * The benchmarked crate, benchmarking scripts can be found in [this
-  repository](https://github.com/davidlattimore/warm-build-benchmark).
+  repository](https://github.com/davidlattimore/warm-build-benchmark/commit/2ab40002dbbc3e6b0b8aa42b28a22894349695e6).
 * All benchmarks were run on my few-year-old System 76 laptop. It's got an i7-10510U CPU, 42GB of
   RAM and is running Pop-OS (a Linux distribution).
 * A couple of warmup builds are done first.
