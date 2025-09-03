@@ -406,4 +406,4 @@ to make it possible for me to continue to work on this kind of stuff rather than
 
 ## Discussion
 
-* Reddit: TODO
+* [Reddit](https://www.reddit.com/r/rust/comments/1n7814i/wild_performance_tricks/)
