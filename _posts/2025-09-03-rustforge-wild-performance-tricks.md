@@ -348,6 +348,62 @@ fn process_buffer(names: Vec<&[u8]>) {
 
 In this case, we're converting the `Vec` from a `Vec<&[u8]>` to  `Vec<&'static [u8]>`.
 
+## Bonus: Strip lifetime with non-trivial Drop
+
+This is a bonus tip that there wasn't included in the talk and builds on the previous tip and is in
+ response to a question by VorpalWay on Reddit. If you want to drop a `Vec<T>` and `T` has both a
+non-static lifetime and a non-trivial `Drop`, then things get slightly more tricky. The trick here
+is to convert to a struct that is the same as `T`, but has non-static references replaced with
+`MaybeUninit`.
+
+For example, suppose we have the following struct:
+
+```rust
+pub struct Foo<'a> {
+    owned: String,
+    borrowed: &'a str,
+}
+```
+
+We can define a new struct:
+
+```rust
+struct StaticFoo {
+    owned: String,
+    borrowed: MaybeUninit<&'static str>,
+}
+```
+
+We can then convert our Vec to the new type with zero cost and no unsafe:
+
+```rust
+fn without_lifetime(foos: Vec<Foo>) -> Vec<StaticFoo> {
+    foos.into_iter()
+        .map(|f| StaticFoo {
+            owned: f.owned,
+            borrowed: MaybeUninit::uninit(),
+        })
+        .collect()
+}
+```
+
+The presence of `MaybeUnit::uninit()` tells the compiler that it's OK to have anything there, so it
+can choose to leave whatever `&str` was in the original `Foo` struct. This means that it's valid to
+produce a `StaticFoo` with the same in-memory representation as the `Foo` that it replaces, allowing
+it to eliminate the loop. The asm for this function is:
+
+```nasm
+ movups  xmm0, xmmword, ptr, [rsi]
+ mov     rax, qword, ptr, [rsi, +, 16]
+ movups  xmmword, ptr, [rdi], xmm0
+ mov     qword, ptr, [rdi, +, 16], rax
+ ret
+```
+
+i.e. the loop was indeed eliminated.
+
+Now that we have a Vec with no non-static lifetimes, we can safely move it to another thread.
+
 # Thanks
 
 Thanks to my [github sponsors](https://github.com/sponsors/davidlattimore). Your contributions help
