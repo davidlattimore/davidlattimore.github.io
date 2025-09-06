@@ -51,14 +51,14 @@ multiple threads. We start by iterating over our objects, then for each object, 
 `split_off_mut` to split off a mutable slice of `resolutions` that contains the resolutions for that
 object. `par_bridge` converts this regular Rust iterator into a Rayon parallel iterator. The closure
 passed to `for_each` then runs in parallel on multiple threads, with each thread getting access to
-the object and a mutable slice of that objects resolutions.
+the object and a mutable slice of that object's resolutions.
 
 ## Parallel initialisation of the Vec
 
 The previous technique of using `split_off_mut` to get multiple non-overlapping mutable slices of
 our Vec relies on the Vec having already been initialised. We'd like to initialise our Vec in
 parallel, otherwise we'd have to wait for the main thread to fill the entire Vec with a placeholder
-value only to then have out threads overwrite those placeholder values. To do this, we can use the
+value only to then have our threads overwrite those placeholder values. To do this, we can use the
 `sharded-vec-writer` crate, which was created for use in Wild, but which can be used for similar
 purposes elsewhere.
 
@@ -207,7 +207,7 @@ overwriting the empty Vec that we temporarily put in its place.
 self.resolutions = into_non_atomic(atomic_resolutions);
 ```
 
-On thing worth noting here is that if we panic (or do an early return), we might leave
+One thing worth noting here is that if we panic (or do an early return), we might leave
 `self.resolutions` as the empty Vec. This isn't a problem in the linker, since if we're returning an
 error or have hit a panic, then we don't care at that point about resolutions. It would be possible
 to ensure that the proper Vec was restored for use-cases where that was important, however it would
@@ -261,13 +261,13 @@ fn reuse_vec<T, U>(mut v: Vec<T>) -> Vec<U> {
 }
 ```
 
-The idea of this function is convert from a Vec of some time to an empty Vec of another type,
+The idea of this function is to convert from a Vec of some time to an empty Vec of another type,
 reusing the heap allocation. This works in a very similar way to how we converted between atomic and
 non-atomic `SymbolId`s, except this time because we first clear the Vec, the body of our `map`
 function is unreachable.
 
 The optimisation in the Rust standard library that allows reuse of the heap allocation will only
-actually work if the size and alignment of `T` and `U` are the same, so lets verify that that's the
+actually work if the size and alignment of `T` and `U` are the same, so let's verify that that's the
 case. We can do the check at compile time, so if we accidentally call this function with
 incompatible `T` and `U`, we'll get a compilation error at the call site.
 
@@ -332,7 +332,7 @@ fn process_buffer(buffer: Vec<u8>) {
 Note, that `rayon::spawn` itself does a heap allocation, so this would only be worthwhile if
 `buffer` was potentially very large. This is definitely something you'd want to benchmark to see if
 it actually improves the runtime for your use-case. There is at least one place in the Wild linker
-where we do this and it did give a measurable reduction in runtime.
+where we did this and it did give a measurable reduction in runtime.
 
 Similar to buffer reuse, if our heap allocation has non-static lifetimes associated with it, we can
 get rid of them using `reuse_vec`.
@@ -350,8 +350,8 @@ In this case, we're converting the `Vec` from a `Vec<&[u8]>` to  `Vec<&'static [
 
 ## Bonus: Strip lifetime with non-trivial Drop
 
-This is a bonus tip that there wasn't included in the talk and builds on the previous tip and is in
- response to a question by VorpalWay on Reddit. If you want to drop a `Vec<T>` and `T` has both a
+This is a bonus tip that wasn't included in the talk and builds on the previous tip and is in
+response to a question by VorpalWay on Reddit. If you want to drop a `Vec<T>` and `T` has both a
 non-static lifetime and a non-trivial `Drop`, then things get slightly more tricky. The trick here
 is to convert to a struct that is the same as `T`, but has non-static references replaced with
 `MaybeUninit`.
