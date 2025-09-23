@@ -153,3 +153,7 @@ particular the following people who have sponsored at least $30 since the last r
 * joshtriplett
 * jonhoo
 * +1 anonymous
+
+# Discussions
+
+* [Reddit](https://www.reddit.com/r/rust/comments/1no80lz/wild_linker_update_060/)
