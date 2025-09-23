@@ -1,8 +1,10 @@
 ---
 layout: default
 title:  "Wild Linker Update - 0.6.0"
-date:   2025-09-03 00:00:00 +1100
+date:   2025-09-23 00:00:00
 categories: posts
+redirect_from:
+  - /posts/2025/09/02/wild-update-0.6.0.html
 ---
 Today, we've released [Wild version
 0.6.0](https://github.com/davidlattimore/wild/releases/tag/0.6.0). There were many changes and we
