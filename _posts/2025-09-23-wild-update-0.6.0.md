@@ -53,7 +53,8 @@ to use it for other things, who are we to stop you. As always, be sure to let us
 problems.
 
 With 0.6.0, we can now link the Chromium web browser. This is an interesting stress test for linkers
-because it's really big. The binary, even without debug info is 1.4 GiB.
+because it's really big - about 1.4 GiB (a previous version of this post incorrectly said that this
+was without debug info, it's actually with debug info).
 
 ![Benchmark of time to link Chromium](/images/0.6.0/chromium.svg)
 
