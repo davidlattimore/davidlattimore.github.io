@@ -204,3 +204,7 @@ Wild, in particular the following, who have sponsored at least $15 in the last t
 * Kobzol
 * HadrienG2
 * +3 anonymous
+
+## Discussion threads
+
+* [Reddit](https://www.reddit.com/r/rust/comments/1p7omoh/thoughts_on_graph_algorithms_in_rayon/)
