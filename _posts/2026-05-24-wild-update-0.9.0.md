@@ -82,3 +82,5 @@ particular the following people who have sponsored at least $30 since the last r
 * +37 others
 
 # Discussions
+
+* [Reddit](https://www.reddit.com/r/rust/comments/1tlzdtw/wild_linker_090_released/)
